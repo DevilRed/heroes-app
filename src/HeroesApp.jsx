@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { MarvelPage, DcPage } from "./heroes";
+import { MarvelPage, DcPage, SearchPage, HeroPage } from "./heroes";
 import AppLayout from "./layouts/AppLayout";
 import { LoginPage } from "./auth";
 
@@ -15,6 +15,14 @@ const router = createBrowserRouter([
       {
         path: "dc",
         element: <DcPage />,
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
+      },
+      {
+        path: "hero",
+        element: <HeroPage />,
       },
     ],
   },
