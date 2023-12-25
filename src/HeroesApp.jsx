@@ -16,11 +16,11 @@ const router = createBrowserRouter([
         path: "dc",
         element: <DcPage />,
       },
-      {
-        path: "login",
-        element: <LoginPage />,
-      },
     ],
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
 ]);
 
