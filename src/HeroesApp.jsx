@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MarvelPage, DcPage, SearchPage, HeroPage } from "./heroes";
 import AppLayout from "./layouts/AppLayout";
-import { LoginPage } from "./auth";
+import { AuthProvider, LoginPage } from "./auth";
 
 const router = createBrowserRouter([
   {
@@ -34,8 +34,10 @@ const router = createBrowserRouter([
 
 export const HeroesApp = () => {
   return (
-    <RouterProvider router={router}>
-      <div>HeroesApp</div>
-    </RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}>
+        <div>HeroesApp</div>
+      </RouterProvider>
+    </AuthProvider>
   );
 };
