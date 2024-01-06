@@ -7,7 +7,7 @@ export const LoginPage = () => {
   const navigate = useNavigate();
   const onLogin = () => {
     login("Thulio Hinojosa");
-    navigate("/", {
+    navigate("/marvel", {
       replace: true, // replace:  remove the current url from navigation history
     });
   };
