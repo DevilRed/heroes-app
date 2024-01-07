@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MarvelPage, DcPage, SearchPage, HeroPage } from "./heroes";
 import AppLayout from "./layouts/AppLayout";
 import { AuthProvider, LoginPage } from "./auth";
+import { PrivateRoute } from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -10,11 +11,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "marvel",
-        element: <MarvelPage />,
+        element: (
+          <PrivateRoute>
+            <MarvelPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "dc",
-        element: <DcPage />,
+        element: (
+          <PrivateRoute>
+            <DcPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "search",
@@ -22,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: "hero/:id",
-        element: <HeroPage />,
+        element: (
+          <PrivateRoute>
+            <HeroPage />
+          </PrivateRoute>
+        ),
       },
     ],
   },
