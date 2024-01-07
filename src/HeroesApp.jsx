@@ -29,9 +29,9 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: (
-          <PublicRoute>
+          <PrivateRoute>
             <SearchPage />
-          </PublicRoute>
+          </PrivateRoute>
         ),
       },
       {
