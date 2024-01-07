@@ -3,6 +3,7 @@ import { MarvelPage, DcPage, SearchPage, HeroPage } from "./heroes";
 import AppLayout from "./layouts/AppLayout";
 import { AuthProvider, LoginPage } from "./auth";
 import { PrivateRoute } from "./routes/PrivateRoute";
+import { PublicRoute } from "./routes/PublicRoute";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "search",
-        element: <SearchPage />,
+        element: (
+          <PublicRoute>
+            <SearchPage />
+          </PublicRoute>
+        ),
       },
       {
         path: "hero/:id",
@@ -41,7 +46,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <LoginPage />,
+    element: (
+      <PublicRoute>
+        <LoginPage />
+      </PublicRoute>
+    ),
   },
 ]);
 
